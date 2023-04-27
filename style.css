@@ -1,0 +1,141 @@
+@import './src/css/normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --backGround: #f2f2f2;
+  --bgModal: #fff;
+  --clr-black: #222;
+  --clr-white: #fff;
+  --transition: all 0.3s linear;
+  --radius: 0.25rem;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10px */
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 1rem;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--backGround);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 3.5rem;
+  /* font-weight: 300; */
+  line-height: 1;
+}
+
+/*
+=============== 
+Button
+===============
+*/
+.btn {
+  width: 330px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--clr-black);
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  border: 2px solid var(--clr-black);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  font-size: 2rem;
+  padding: 0.75rem 1.25rem;
+  /* white-space: nowrap; */
+}
+@media (min-width: 768px) {
+  .btn {
+    width: auto;
+  }
+}
+.btn:hover {
+  color: var(--clr-white);
+  background: var(--clr-black);
+}
+
+/*
+=============== 
+Modal
+===============
+*/
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 60rem;
+  background-color: var(--bgModal);
+  padding: 2rem;
+  border: 2px solid var(--clr-black);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blur-in 0.2s linear both;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: tomato;
+  font-size: 3rem;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .modal-close {
+    font-size: 2.5rem;
+  }
+}
