@@ -12,7 +12,7 @@ Sencillo modal el cual se visualiza al dar click en un botón.
 ## Instalación.-
 Clonar repositorio:
 ```js
-git clone git@github.com:neolinkDev/beer-store.git
+git@github.com:neolinkDev/01-modal-poo-js.git
 ```
 Instale las dependencias usando la terminal:
 ```js
